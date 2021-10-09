@@ -1,0 +1,93 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;0,300;0,400;0,500;1,200;1,300;1,400&display=swap');
+
+*{
+   font-family: 'Poppins', sans-serif;
+}
+
+form{
+   height: 100%;
+   width: 95%;
+   height: 100%;
+   margin: auto;
+   margin-bottom: 3%;
+}
+.form-container{
+   height: 90%;
+   margin: auto;
+   margin-bottom: 3%;
+}
+fieldset > div:nth-child(3){
+   display: flex;
+   justify-content: space-evenly;
+   margin-bottom: 3%;
+}
+fieldset button{
+   padding: 1em 1.5rem;
+   background-color: transparent;
+   cursor: pointer;
+
+   border-radius: .5em;
+   -webkit-border-radius: .5em;
+   -moz-border-radius: .5em;
+   -ms-border-radius: .5em;
+   -o-border-radius: .5em;
+}
+.inputs{
+   height: 100%;
+   padding: .5rem;
+   display: flex;
+   flex-direction: column;
+   justify-content: space-evenly;
+   /* justify-content: space-evenly; */
+}
+/* .left, .right{
+   width: 45%;
+} */
+.left div, .right div{
+   border: 1px solid black;
+   height: 2.3em;
+   display: flex;
+   align-items: center;
+   justify-content: space-between;
+}
+label{
+   margin-left: 5%;
+   max-width: 60%;
+   font-weight: 600;
+}
+input{
+   max-width: 35%;
+   height: 90%;
+   border: 1px solid #444;
+   font-size: 1em;
+   padding-left: 5px;
+   border-radius: 10px;
+   margin-left: 10px;
+}
+legend{
+   text-align: center;
+   font-size: 1em;
+}
+
+.form-button{
+   border-radius: 2rem;
+   color: #FFF;
+}
+
+.form-button:first-child{
+   background-color: #008080;
+}
+
+.form-button:nth-child(2){
+   background-color: #FF00FF;
+}
+
+.form-button:nth-child(3){
+   background-color: #00FFFF;
+   color: #555;
+}
+
+.form-button:last-child{
+   background-color: #FFFF00;
+   color: #555;
+}

@@ -1,0 +1,66 @@
+.container{
+  display: flex;
+  flex-direction: column;
+}
+
+.header{
+   color: red;
+   font-size: 1em;
+   font-weight: 900;
+   border-bottom: 6px dotted red;
+   width: 70%;
+   margin: auto;
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   line-height: .3em;
+   padding-bottom: 1rem;
+ }
+ .header span:nth-child(2){
+   font-size: .5rem;
+   margin: 7px 0;
+ }
+ .content{
+   background-image: linear-gradient(rgba(255,255,255,.8), rgba(255,255,255,.8)),url("./bone.jpg");
+   background-repeat: no-repeat;
+   background-size: 90%;
+   background-position: 50% 50%;
+   width: 90%;
+   margin: auto;
+   padding-top: 10px;
+   font-size: 12.5px;
+   margin-bottom: 10px;
+ }
+ .content span:first-child{
+   font-weight: bolder;
+ }
+ .content p{
+   line-height: 1.3rem;
+   text-indent: 3em;
+   font-weight: 600;
+ }
+ .content p *{
+   text-indent: 0;
+ }
+ .content p:first-child{
+   text-indent: 0;
+ }
+ .field{
+   display: inline-flex;
+   flex-direction: column;
+   line-height: 1em;
+ }
+ .field span:first-child{
+   border: none;
+   border-bottom: 2px solid black;
+   font-weight: 600;
+   text-align: center;
+ }
+ .field span:nth-child(2){
+   font-size: .8em;
+   text-align: center;
+ }
+
+ .field{
+   text-align: center;
+ }
