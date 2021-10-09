@@ -1,20 +1,31 @@
-import React from 'react';
+import React,{useState} from 'react';
 import './css/Form.css';
 import html2canvas from 'html2canvas';
 function Forming(props) {
 
-  function Reset(e){
-    e.target.form.reset()
-    let emptyObj = {}
-    for(let i = 0; i<20; i++)
-      emptyObj[`answer${i+1}`] = '';
-    
-    props.fill(emptyObj);
+  
+  const [status,setStatus] = useState('');
+  
+  function completeForm(e){
+    const inputs = [...e.target.form.elements];
+    setStatus('initial');
+    for(let j = 1; j<21; j++)
+        if(inputs[j] === ''){
+          setStatus('');
+          break;
+        }  
   }
-
+    
   function handleChange(e){
     e.preventDefault();
-    props.fill({
+    if(status === 'initial'){
+      const inputs = [...e.target.elements];
+      
+      for(let k = 1; k <21;k++)
+        inputs[k].disabled = true;
+
+      setStatus('complete');
+      props.fill({
         answer1: e.target.elements.answer1.value,
         answer2: e.target.elements.answer2.value,
         answer3: e.target.elements.answer3.value,
@@ -36,8 +47,23 @@ function Forming(props) {
         answer19: e.target.elements.answer19.value,
         answer20: e.target.elements.answer20.value,
       });
+    }
+    else
+      alert('There are empty inputs');
   }
+  function Reset(e){
+    e.target.form.reset();
+    let emptyObj = {}
+    for(let i = 0; i<20; i++)
+      emptyObj[`answer${i+1}`] = '';
+    props.fill(emptyObj);
 
+    const inputs = [...e.target.form.elements];
+    for(let n=1;n<21;n++)
+      inputs[n].disabled = false;
+    setStatus('initial');
+  }
+  
   function Randomize(e){
       let optionsRange = 5;
       const possibleAnswers = [
@@ -106,104 +132,104 @@ function Forming(props) {
           {/* <div className="left"> */}
             <div>
               <label htmlFor="answer1"> 1) pet name </label>
-              <input type="text" name="" id="answer1"/>
+              <input type="text" name="" id="answer1" onChange={completeForm}/>
             </div>
       
             <div>
               <label htmlFor="answer2"> 2) adjective </label>
-              <input type="text" name="" id="answer2"/>
+              <input type="text" name="" id="answer2" onChange={completeForm}/>
             </div>
             
             <div>
               <label htmlFor="answer3"> 3) animal </label>
-              <input type="text" name="" id="answer3"/>
+              <input type="text" name="" id="answer3" onChange={completeForm}/>
             </div>
       
             <div>
               <label htmlFor="answer4"> 4) mean person's name </label>
-              <input type="text" name="" id="answer4"/>
+              <input type="text" name="" id="answer4" onChange={completeForm}/>
             </div>
       
             <div>
               <label htmlFor="answer5"> 5) item of furniture </label>
-              <input type="text" name="" id="answer5"/>
+              <input type="text" name="" id="answer5" onChange={completeForm}/>
             </div>
       
             <div>
               <label htmlFor="answer6"> 6) adjective </label>
-              <input type="text" name="" id="answer6"/>
+              <input type="text" name="" id="answer6" onChange={completeForm}/>
             </div>
       
             <div>
               <label htmlFor="answer7"> 7) verb </label>
-              <input type="text" name="" id="answer7"/>
+              <input type="text" name="" id="answer7" onChange={completeForm}/>
             </div>
       
             <div>
               <label htmlFor="answer8"> 8) verb </label>
-              <input type="text" name="" id="answer8"/>
+              <input type="text" name="" id="answer8" onChange={completeForm}/>
             </div>
       
             <div>
               <label htmlFor="answer9"> 9) song you don't like </label>
-              <input type="text" name="" id="answer9"/>
+              <input type="text" name="" id="answer9" onChange={completeForm}/>
             </div>
       
             <div>
               <label htmlFor="answer10"> 10) kind of lunch meat </label>
-              <input type="text" name="" id="answer10"/>
+              <input type="text" name="" id="answer10" onChange={completeForm}/>
             </div>  
           {/* </div> */}
     
           {/* <div className="right"> */}
             <div>
               <label htmlFor="answer11"> 11) noun </label>
-              <input type="text" name="" id="answer11"/>
+              <input type="text" name="" id="answer11" onChange={completeForm}/>
             </div>
       
             <div>
               <label htmlFor="answer12"> 12) adjective </label>
-              <input type="text" name="" id="answer12"/>
+              <input type="text" name="" id="answer12" onChange={completeForm}/>
             </div>
       
             <div>
               <label htmlFor="answer13"> 13) jungle animal </label>
-              <input type="text" name="" id="answer13"/>
+              <input type="text" name="" id="answer13" onChange={completeForm}/>
             </div>
       
             <div>
               <label htmlFor="answer14"> 14) adjective </label>
-              <input type="text" name="" id="answer14"/>
+              <input type="text" name="" id="answer14" onChange={completeForm}/>
             </div>
       
             <div>
               <label htmlFor="answer15"> 15) type of small pet</label>
-              <input type="text" name="" id="answer15"/>
+              <input type="text" name="" id="answer15" onChange={completeForm}/>
             </div>
       
             <div>
               <label htmlFor="answer16"> 16) name of pet</label>
-              <input type="text" name="" id="answer16"/>
+              <input type="text" name="" id="answer16" onChange={completeForm}/>
             </div>
       
             <div>
               <label htmlFor="answer17"> 17) household object</label>
-              <input type="text" name="" id="answer17"/>
+              <input type="text" name="" id="answer17" onChange={completeForm}/>
             </div>
       
             <div>
               <label htmlFor="answer18"> 18) person who regularly visit you</label>
-              <input type="text" name="" id="answer18"/>
+              <input type="text" name="" id="answer18" onChange={completeForm}/>
             </div>
       
             <div>
               <label htmlFor="answer19"> 19) name of famous animal </label>
-              <input type="text" name="" id="answer19"/>
+              <input type="text" name="" id="answer19" onChange={completeForm}/>
             </div>
       
             <div>
               <label htmlFor="answer20"> 20) adjective </label>
-              <input type="text" name="" id="answer20"/>
+              <input type="text" name="" id="answer20" onChange={completeForm}/>
             </div>
           {/* </div> */}
         </div>
